@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="http://localhost:3000/main/login.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="http://localhost:3000/javascripts/join.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="login-box">
+            <h1 class="login-h1">SNS</h1>
+            <div class="login-input-container">
+                <div class="login-input-box">
+                    <input class="input" type="input" type="text" id="login-id" placeholder="아이디를 입력해 주세요.">
+                </div>
+                <div class="login-input-box">
+                    <input class="input" type="input" type="text" id="login-email" placeholder="이메일을 입력해 주세요.">
+                </div>
+                <div class="login-input-box">
+                    <input type="password" class="input" id="login-pw-1" placeholder="비밀번호를 입력해주세요.">
+                    <input type="password" class="input" id="login-pw-2" placeholder="비밀번호를 재 입력 해주세요.">
+                </div>
+            </div>
+            <div class="login-tool-container login-input-container">
+                <button class="login-tool-button login-input-box login-button-input" onclick="join()">
+                    회원가입
+                </button>
+                <a href="http://localhost:3000/">
+                    <button class="login-tool-button login-input-box login-button-input">취소</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
