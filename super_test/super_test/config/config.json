@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "hys014081hys",
+    "database": "test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging": true
+  },
+  "test": {
+    "username": "root",
+    "password": "hys014081hys",
+    "database": "test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "hys014081hys",
+    "database": "test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
