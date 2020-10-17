@@ -4,13 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+// var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var forumRouter = require('./routes/forum');
+var loginRouter = require('./routes/login');
 
-var app = express();
+const app = express();
+const session = require('express-session');
+const FileStore = require('session-file-store')(session); // 1
+const bodyParser = require('body-parser');
+
 
 const models = require('./models');
+const { resourceUsage } = require('process');
+const { userInfo } = require('os');
 models.sequelize.sync()
   .then(()=>{
     console.log('DB 연결');
@@ -31,9 +38,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/forum', forumRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

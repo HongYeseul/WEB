@@ -17,13 +17,13 @@ router.get('/', function(req, res, next) {
 
 // 아이디 생성 
 router.post('/', function(req, res, next){
-  let ID = req.body.ID;
+  console.log(req.body.id);
   Users.findAll({
-      where : {userID : ID}
+      where : {userID : req.body.id}
     }).then(result => {
       if(result.length==0){
         Users.create({
-          userID : req.body.ID,
+          userID : req.body.id,
           UserName : req.body.Name,
           UserPW : req.body.Password,
           PhoneNum : req.body.Phone,
@@ -72,6 +72,5 @@ router.delete('/:id', async (req, res, next)=>{
     next(err);
   })
 })
-
 
 module.exports = router;
